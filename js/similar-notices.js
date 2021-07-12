@@ -17,6 +17,9 @@ const renderSimilarNotices = () => {
     notice.querySelector('.popup__text--capacity').textContent = `${offer.rooms} комнаты для ${offer.guests} гостей`;
     notice.querySelector('.popup__text--time').textContent = `${offer.checkin}, выезд до ${offer.checkout}`;
     notice.querySelector('.popup__description').textContent = offer.description;
+    if (offer.description === undefined) {
+      notice.querySelector('.popup__description').classList.add('hidden');
+    }
     notice.querySelector('.popup__avatar').src = author.avatar;
 
     notice.querySelector('.popup__type').textContent = (function () {

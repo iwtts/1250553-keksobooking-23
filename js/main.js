@@ -1,3 +1,3 @@
-import { renderSimilarNotices } from './random-data.js';
+import { renderSimilarNotices } from './similar-notices.js';
 
 renderSimilarNotices();

@@ -1,10 +1,6 @@
-import {
-  getRandomPositiveInteger,
-  getRandomPositiveDecimal,
-  makeUniqueRandomPositiveIntegerGenerator
-} from './utils.js';
+import {getRandomPositiveInteger, getRandomPositiveDecimal, makeUniqueRandomPositiveIntegerGenerator} from './utils.js';
 
-const SIMILAR_NOTICES_COUNT = 10;
+const NOTICES_COUNT = 10;
 
 const AVATAR_NUMBER_RANGE = {
   from: 1,
@@ -79,7 +75,7 @@ const getAuthorAvatarNumber = () => {
 const locationLat = getRandomPositiveDecimal(LATITUDES_RANGE.from, LATITUDES_RANGE.to, LATITUDES_RANGE.decimal);
 const locationLng = getRandomPositiveDecimal(LONGITUDES_RANGE.from, LONGITUDES_RANGE.to, LONGITUDES_RANGE.decimal);
 
-const renderSimilarNotice = () => ({
+const renderNotice = () => ({
   author: {
     avatar:`img/avatars/user${getAuthorAvatarNumber()}.png`,
   },
@@ -102,6 +98,6 @@ const renderSimilarNotice = () => ({
   },
 });
 
-const renderSimilarNotices = () => new Array(SIMILAR_NOTICES_COUNT).fill(null).map(() => renderSimilarNotice());
+const renderNotices = () => new Array(NOTICES_COUNT).fill(null).map(() => renderNotice());
 
-export { renderSimilarNotices };
+export { renderNotices };
